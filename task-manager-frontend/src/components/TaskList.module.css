@@ -1,0 +1,190 @@
+/* TaskList.module.css */
+.container {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.08);
+  height: auto;
+  min-height: 500px;
+  border: 1px solid #e9ecef;
+}
+
+.container h2 {
+  text-align: center;
+  color: #333;
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.taskList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* Custom scrollbar */
+.taskList::-webkit-scrollbar {
+  width: 6px;
+}
+
+.taskList::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.taskList::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.taskList::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+.taskItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  margin: 10px 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  animation: fadeIn 0.4s ease;
+  border: 1px solid #f0f0f0;
+}
+
+.taskItem:hover {
+  transform: translateX(4px);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  background: #f8f9fa;
+  border-color: #e0e0e0;
+}
+
+.taskItem.completed {
+  background: #e3f2fd;
+  opacity: 0.8;
+}
+
+.taskText {
+  flex: 1;
+  font-size: 15px;
+  color: #333;
+  transition: all 0.3s ease;
+  word-break: break-word;
+  padding-right: 10px;
+}
+
+.taskItem.completed .taskText {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.2s ease;
+  padding: 4px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button:hover {
+  transform: scale(1.15);
+}
+
+.button:active {
+  transform: scale(0.95);
+}
+
+.checkIcon {
+  color: gray;
+  transition: all 0.2s ease;
+}
+
+.checkIcon.completed {
+  color: #4caf50;
+}
+
+.checkIcon:hover {
+  color: #4caf50;
+}
+
+.trashIcon {
+  color: #f44336;
+  transition: all 0.2s ease;
+}
+
+.trashIcon:hover {
+  color: #d32f2f;
+}
+
+/* Animation for new tasks */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Empty state styling */
+.taskList:empty::before {
+  content: "✨ No tasks yet. Add a new task above! ✨";
+  display: block;
+  text-align: center;
+  padding: 40px 20px;
+  color: #999;
+  font-size: 14px;
+  background: #fafafa;
+  border-radius: 8px;
+  border: 1px dashed #ddd;
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .container {
+    max-width: 95%;
+    margin: 10px auto;
+    padding: 15px;
+    min-height: 400px;
+  }
+
+  .container h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  .taskItem {
+    padding: 10px;
+  }
+
+  .taskText {
+    font-size: 14px;
+  }
+
+  .button {
+    font-size: 16px;
+  }
+}
