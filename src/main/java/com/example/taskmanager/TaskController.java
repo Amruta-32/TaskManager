@@ -3,10 +3,12 @@ package com.example.taskmanager;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-@CrossOrigin(origins = "http://localhost:3000")
-
 @RestController
 @RequestMapping("/api/tasks")
+@CrossOrigin(origins = {
+		"http://localhost:3000",
+		"https://task-manager-frontend-t730.onrender.com"
+})
 public class TaskController {
 	private final TaskRepository taskRepository;
 
