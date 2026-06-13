@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8080/api/tasks'; // Spring Boot Backend
+const API_URL = 'https://taskmanager-yfij.onrender.com/api/tasks';
 
 // Fetch all tasks
 export const getTasks = async () => {
