@@ -11,7 +11,6 @@ import java.util.List;
 })
 public class TaskController {
 	private final TaskRepository taskRepository;
-
 	public TaskController(TaskRepository taskRepository) {
 		this.taskRepository = taskRepository;
 	}
